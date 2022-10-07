@@ -121,8 +121,8 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     year = localtime().tm_year
     month = localtime().tm_mon
     day = localtime().tm_mday
-    today = datetime.date(datetime(year=year, month=month, day=day))
-    week = week_list[today.isoweekday() % 7]
+    today = datetime.date(datetime(year=year, month=month, day=day+1))
+    week = week_list[today.isoweekday() % 7+1]
     # 获取在一起的日子的日期格式
     love_year = int(config["love_date"].split("-")[0])
     love_month = int(config["love_date"].split("-")[1])
